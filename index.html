@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ธรรมะร่วมสมัย | แก่นแท้จากพระไตรปิฎก</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-bg: #f9f8f6; /* Soft stone/cream */
+            --color-text-main: #2d3748;
+            --color-accent: #5b8a72; /* Muted sage green */
+            --color-accent-hover: #4a745e;
+        }
+        
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text-main);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Prompt', sans-serif;
+        }
+
+        /* Tab Content Transitions */
+        .tab-content {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.5s ease-out;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeUp 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Navigation Buttons */
+        .nav-btn {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-btn::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .nav-btn.active {
+            background-color: #f3f4f6;
+            color: var(--color-accent);
+            font-weight: 500;
+        }
+
+        .nav-btn.active::before {
+            background-color: var(--color-accent);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <header class="w-full py-12 px-6 text-center border-b border-gray-200 bg-white/50">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-3xl md:text-5xl font-heading font-medium tracking-wide text-gray-800 mb-4">
+                ธรรมะร่วมสมัย
+            </h1>
+            <p class="text-lg md:text-xl text-gray-500 font-heading font-light">
+                แก่นแท้จากพระไตรปิฎก สู่การปรับใช้ในยุคดิจิทัล
+            </p>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row gap-8">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="w-full md:w-1/4 shrink-0">
+            <nav class="flex flex-col gap-2 font-heading sticky top-8">
+                <button class="nav-btn active text-left px-5 py-4 rounded-lg text-gray-600 hover:bg-gray-50 flex items-center justify-between group" data-target="tab-ariyasacca">
+                    <span>๑. อริยสัจ ๔</span>
+                    <svg class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-[#5b8a72]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+                <button class="nav-btn text-left px-5 py-4 rounded-lg text-gray-600 hover:bg-gray-50 flex items-center justify-between group" data-target="tab-brahmavihara">
+                    <span>๒. พรหมวิหาร ๔</span>
+                    <svg class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-[#5b8a72]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+                <button class="nav-btn text-left px-5 py-4 rounded-lg text-gray-600 hover:bg-gray-50 flex items-center justify-between group" data-target="tab-lokadhamma">
+                    <span>๓. โลกธรรม ๘</span>
+                    <svg class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-[#5b8a72]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+            </nav>
+        </aside>
+
+        <section class="w-full md:w-3/4 glass-card rounded-2xl p-8 md:p-12 border border-gray-100">
+            
+            <!-- อริยสัจ 4 -->
+            <article id="tab-ariyasacca" class="tab-content active">
+                <header class="mb-8 border-b border-gray-100 pb-6">
+                    <span class="text-[#5b8a72] font-heading font-medium tracking-widest text-sm uppercase">หมวดที่ ๑</span>
+                    <h2 class="text-3xl md:text-4xl font-heading font-medium text-gray-800 mt-2 mb-4">อริยสัจ ๔</h2>
+                    <p class="text-xl text-gray-500 font-heading font-light">กรอบความคิดเพื่อการแก้ปัญหาและการจัดการความเครียด</p>
+                </header>
+
+                <div class="space-y-8 text-gray-600">
+                    <p class="text-lg leading-relaxed">
+                        อริยสัจ ๔ ไม่ใช่เพียงหลักปรัชญาเชิงศาสนา แต่คือ <strong class="text-gray-800">Framework (กรอบการทำงาน) แบบเป็นเหตุเป็นผล</strong> ที่ใช้ในการแก้ปัญหาทุกระดับ ตั้งแต่ความเครียดในการทำงาน (Burnout) ไปจนถึงวิกฤตชีวิต หลักการนี้นำเสนอวิธีคิดแบบ Root Cause Analysis (การวิเคราะห์หาสาเหตุรากฐาน) ที่แม่นยำ
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                        <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                            <h3 class="font-heading font-semibold text-gray-800 text-lg mb-2 flex items-center">
+                                <span class="bg-gray-200 text-gray-600 w-6 h-6 rounded-full flex items-center justify-center text-xs mr-3">1</span> 
+                                ทุกข์ (Diagnosis)
+                            </h3>
+                            <p class="text-sm">การยอมรับว่ามีปัญหาเกิดขึ้น ไม่ปฏิเสธความรู้สึกเหนื่อยล้า หรือภาวะหมดไฟ ยอมรับสภาพความเครียดตามความเป็นจริงโดยไม่หลอกตัวเอง</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                            <h3 class="font-heading font-semibold text-gray-800 text-lg mb-2 flex items-center">
+                                <span class="bg-gray-200 text-gray-600 w-6 h-6 rounded-full flex items-center justify-center text-xs mr-3">2</span> 
+                                สมุทัย (Root Cause)
+                            </h3>
+                            <p class="text-sm">สืบหาสาเหตุที่แท้จริง เช่น ความคาดหวังที่สูงเกินไป, การไม่กล้าปฏิเสธงาน (People Pleaser), หรือการยึดติดในความสมบูรณ์แบบ (Perfectionism)</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                            <h3 class="font-heading font-semibold text-gray-800 text-lg mb-2 flex items-center">
+                                <span class="bg-gray-200 text-gray-600 w-6 h-6 rounded-full flex items-center justify-center text-xs mr-3">3</span> 
+                                นิโรธ (Goal Setting)
+                            </h3>
+                            <p class="text-sm">การตั้งเป้าหมายของสภาวะที่ไร้ปัญหา คือการมองเห็นภาพว่าหากเราจัดสมดุลชีวิต (Work-Life Balance) ได้สำเร็จ ความสงบทางใจจะเป็นอย่างไร</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                            <h3 class="font-heading font-semibold text-gray-800 text-lg mb-2 flex items-center">
+                                <span class="bg-gray-200 text-gray-600 w-6 h-6 rounded-full flex items-center justify-center text-xs mr-3">4</span> 
+                                มรรค (Action Plan)
+                            </h3>
+                            <p class="text-sm">ลงมือปฏิบัติจริง เช่น การจัดลำดับความสำคัญ (Time Management), การสื่อสารเพื่อกำหนดขอบเขต (Setting Boundaries), และการฝึกสติ (Mindfulness) ระหว่างวัน</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 bg-[#f4f7f5] border-l-4 border-[#5b8a72] p-6 rounded-r-xl">
+                        <h4 class="font-heading font-medium text-[#4a745e] mb-3 text-lg flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            การประยุกต์ใช้ (Actionable Insight)
+                        </h4>
+                        <p class="text-sm md:text-base text-gray-700">
+                            เมื่อเผชิญกับความเครียด ให้หยิบกระดาษมา 1 แผ่น แบ่งเป็น 4 ช่องตามหลักอริยสัจ 4 เขียนระบุความรู้สึกแย่ๆ (ทุกข์) วิเคราะห์เหตุผลเบื้องหลังโดยไม่กล่าวโทษผู้อื่น (สมุทัย) กำหนดสิ่งที่คุณต้องการจริงๆ (นิโรธ) และลิสต์ 3 สิ่งที่คุณทำได้ทันทีเพื่อคลี่คลายสถานการณ์นั้น (มรรค)
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <article id="tab-brahmavihara" class="tab-content">
+                <header class="mb-8 border-b border-gray-100 pb-6">
+                    <span class="text-[#5b8a72] font-heading font-medium tracking-widest text-sm uppercase">หมวดที่ ๒</span>
+                    <h2 class="text-3xl md:text-4xl font-heading font-medium text-gray-800 mt-2 mb-4">พรหมวิหาร ๔</h2>
+                    <p class="text-xl text-gray-500 font-heading font-light">ศิลปะแห่งการเป็นผู้นำ และการบริหารความสัมพันธ์ในยุคใหม่</p>
+                </header>
+
+                <div class="space-y-8 text-gray-600">
+                    <p class="text-lg leading-relaxed">
+                        ในยุคที่เต็มไปด้วยการแข่งขันและความหลากหลาย การมีความฉลาดทางอารมณ์ (EQ) สำคัญพอๆ กับ IQ พรหมวิหาร ๔ คือ <strong>หลักจิตวิทยาความสัมพันธ์เชิงบวก</strong> ที่ช่วยให้การทำงานร่วมกันราบรื่น และสร้างสภาพแวดล้อมที่ปลอดภัยทางจิตวิทยา (Psychological Safety)
+                    </p>
+
+                    <div class="space-y-6 mt-6">
+                        <div class="flex flex-col md:flex-row gap-4 items-start">
+                            <div class="min-w-[120px] font-heading font-semibold text-[#5b8a72] text-xl">เมตตา</div>
+                            <div>
+                                <strong class="text-gray-800 block mb-1">Empathy & Inclusivity (ความเห็นอกเห็นใจ)</strong>
+                                <p class="text-sm md:text-base">พื้นฐานของความเป็นผู้นำที่ดี คือการมีความปรารถนาดีต่อทีมงาน มองเห็นเพื่อนร่วมงานเป็น 'มนุษย์' ที่มีความรู้สึก ไม่ใช่แค่ 'ทรัพยากร' ที่ขับเคลื่อนผลกำไร</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col md:flex-row gap-4 items-start">
+                            <div class="min-w-[120px] font-heading font-semibold text-[#5b8a72] text-xl">กรุณา</div>
+                            <div>
+                                <strong class="text-gray-800 block mb-1">Supportive Leadership (การลงมือช่วยเหลือ)</strong>
+                                <p class="text-sm md:text-base">เมื่อทีมงานประสบปัญหา หรือล้มเหลว ผู้นำที่มีกรุณาจะเข้าไปช่วยชี้แนะ (Coaching) เป็นที่ปรึกษาเพื่อหาทางออก แทนที่จะจับผิดหรือตำหนิ</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row gap-4 items-start">
+                            <div class="min-w-[120px] font-heading font-semibold text-[#5b8a72] text-xl">มุทิตา</div>
+                            <div>
+                                <strong class="text-gray-800 block mb-1">Celebrating Success (การยินดีและต่อต้านความอิจฉา)</strong>
+                                <p class="text-sm md:text-base">สร้างวัฒนธรรมองค์กรที่ชื่นชมความสำเร็จของกันและกัน ทำลายบรรยากาศ Toxic หรือการชิงดีชิงเด่น (Office Politics) ซึ่งช่วยเพิ่มพลังบวกในการทำงาน</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row gap-4 items-start">
+                            <div class="min-w-[120px] font-heading font-semibold text-[#5b8a72] text-xl">อุเบกขา</div>
+                            <div>
+                                <strong class="text-gray-800 block mb-1">Objective Feedback & Boundaries (การวางเฉยด้วยปัญญา)</strong>
+                                <p class="text-sm md:text-base">จุดสมดุลที่สำคัญที่สุด คือการให้ Feedback อย่างเป็นกลาง ไร้อคติ และการรู้จัก "ปล่อยวาง" เมื่อเราได้ทำหน้าที่สนับสนุนอย่างเต็มที่แล้ว ไม่เอาปัญหาของคนอื่นมาแบกไว้จนเสียศูนย์</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 bg-gray-50 border border-gray-200 p-6 rounded-xl flex gap-4">
+                        <div class="text-[#5b8a72] mt-1 flex-shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                        </div>
+                        <div>
+                            <strong class="text-gray-800 block mb-1 font-heading">เคล็ดลับสำหรับผู้บริหารและหัวหน้างาน</strong>
+                            <p class="text-sm text-gray-600">
+                                ใช้ "อุเบกขา" ในการรักษาใจตนเองให้เป็นกลางเมื่อต้องตัดสินใจเรื่องยากๆ (เช่น การประเมินผล หรือการเลิกจ้าง) โดยตั้งอยู่บนพื้นฐานของเหตุผล ไม่ใช่ความลำเอียงส่วนตัว (ลดความผูกพันเชิงอารมณ์ที่เกินพอดี)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article id="tab-lokadhamma" class="tab-content">
+                <header class="mb-8 border-b border-gray-100 pb-6">
+                    <span class="text-[#5b8a72] font-heading font-medium tracking-widest text-sm uppercase">หมวดที่ ๓</span>
+                    <h2 class="text-3xl md:text-4xl font-heading font-medium text-gray-800 mt-2 mb-4">โลกธรรม ๘</h2>
+                    <p class="text-xl text-gray-500 font-heading font-light">ภูมิคุ้มกันทางใจในยุค Social Media และแรงกดดันทางสังคม</p>
+                </header>
+
+                <div class="space-y-8 text-gray-600">
+                    <p class="text-lg leading-relaxed">
+                        ในยุคที่เราเชื่อมต่อกันตลอดเวลาผ่านโซเชียลมีเดีย เรามักถูกเหวี่ยงไปตามยอดไลก์ คำชม หรือคำวิจารณ์ (Cancel Culture) โลกธรรม ๘ คือความจริงแท้ของโลกที่ว่า <strong class="text-gray-800">"ทุกสิ่งเป็นของคู่กัน และไม่มีสิ่งใดจีรัง"</strong> การตระหนักรู้หลักการนี้ คือเกราะป้องกันสุขภาพจิตที่ดีที่สุด
+                    </p>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                        <div class="text-center p-4 bg-green-50 rounded-lg border border-green-100">
+                            <div class="text-green-700 font-bold mb-1">มีลาภ</div>
+                            <div class="text-xs text-gray-500">ยอดวิว, ผู้ติดตาม</div>
+                        </div>
+                        <div class="text-center p-4 bg-red-50 rounded-lg border border-red-100">
+                            <div class="text-red-700 font-bold mb-1">เสื่อมลาภ</div>
+                            <div class="text-xs text-gray-500">ถูก Unfollow, ยอดตก</div>
+                        </div>
+                        <div class="text-center p-4 bg-green-50 rounded-lg border border-green-100">
+                            <div class="text-green-700 font-bold mb-1">มียศ</div>
+                            <div class="text-xs text-gray-500">สถานะทางสังคม</div>
+                        </div>
+                        <div class="text-center p-4 bg-red-50 rounded-lg border border-red-100">
+                            <div class="text-red-700 font-bold mb-1">เสื่อมยศ</div>
+                            <div class="text-xs text-gray-500">หมดความนิยม</div>
+                        </div>
+                        <div class="text-center p-4 bg-green-50 rounded-lg border border-green-100">
+                            <div class="text-green-700 font-bold mb-1">สรรเสริญ</div>
+                            <div class="text-xs text-gray-500">คอมเมนต์ชื่นชม</div>
+                        </div>
+                        <div class="text-center p-4 bg-red-50 rounded-lg border border-red-100">
+                            <div class="text-red-700 font-bold mb-1">นินทา</div>
+                            <div class="text-xs text-gray-500">การถูก Cyberbully</div>
+                        </div>
+                        <div class="text-center p-4 bg-green-50 rounded-lg border border-green-100">
+                            <div class="text-green-700 font-bold mb-1">สุข</div>
+                            <div class="text-xs text-gray-500">ความพึงพอใจ</div>
+                        </div>
+                        <div class="text-center p-4 bg-red-50 rounded-lg border border-red-100">
+                            <div class="text-red-700 font-bold mb-1">ทุกข์</div>
+                            <div class="text-xs text-gray-500">ความผิดหวัง, โดดเดี่ยว</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 relative overflow-hidden bg-[#2d3748] text-white p-8 rounded-2xl">
+                        <div class="relative z-10">
+                            <h4 class="font-heading font-medium text-white mb-4 text-xl flex items-center">
+                                การสร้าง Digital Resilience (ความยืดหยุ่นในโลกดิจิทัล)
+                            </h4>
+                            <ul class="space-y-4 text-gray-300 text-sm md:text-base">
+                                <li class="flex items-start">
+                                    <span class="text-[#5b8a72] mr-3 font-bold">►</span>
+                                    <span><strong>อย่าผูกคุณค่าตัวเองกับตัวเลข (Detachment):</strong> ยอดไลก์หรือยอดแชร์ คือ 'ลาภและยศ' ชั่วคราวบนอินเทอร์เน็ต มันสะท้อนอัลกอริทึม ไม่ได้สะท้อนคุณค่าความเป็นมนุษย์ของคุณ</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-[#5b8a72] mr-3 font-bold">►</span>
+                                    <span><strong>รับมือกับคำวิจารณ์ (Handling Hate Speech):</strong> เข้าใจว่า 'สรรเสริญ' และ 'นินทา' เป็นของคู่โลก แม้แต่คนที่ดีที่สุดก็หนีไม่พ้นการถูกวิจารณ์ ให้รับฟังเพื่อปรับปรุงหากเป็นประโยชน์ แต่หากเป็น Toxic ให้ปล่อยผ่าน (รู้เท่าทัน)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-[#5b8a72] mr-3 font-bold">►</span>
+                                    <span><strong>การเสพสื่ออย่างมีสติ (Mindful Consumption):</strong> เมื่อเห็นชีวิตที่ดีงามของผู้อื่นจนเกิดความรู้สึกเปรียบเทียบ (FOMO) ให้ระลึกว่านั่นคือเพียงด้าน 'สุข' ที่เขาเลือกนำเสนอ ทุกคนล้วนมี 'ทุกข์' ที่ซ่อนอยู่หลังกล้องเช่นกัน</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer class="w-full mt-auto py-8 text-center text-gray-400 text-sm border-t border-gray-200">
+        <p class="font-heading">&copy; 2026 ธรรมะร่วมสมัย (Contemporary Dharma) - Designed for Mindfulness</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navButtons = document.querySelectorAll('.nav-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // 1. Remove active state from all buttons
+                    navButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-[#f3f4f6]', 'text-[#5b8a72]', 'font-medium');
+                        btn.classList.add('text-gray-600');
+                    });
+
+                    // 2. Add active state to the clicked button
+                    button.classList.add('active', 'text-[#5b8a72]', 'font-medium');
+                    button.classList.remove('text-gray-600');
+
+                    // 3. Hide all tab contents
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+
+                    // 4. Show the target tab content
+                    const targetId = button.getAttribute('data-target');
+                    const targetContent = document.getElementById(targetId);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
